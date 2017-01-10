@@ -12,5 +12,35 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
-//= require_tree .
+//= require angular
+//= require angular-ui-router
+//= require angular-rails-templates
+//= require_tree ../templates
+//= require_self
+//= require controllers/projects
+//= require controllers/home
+
+var app = angular.module( 'routerApp', ['ui.router', 'templates']);
+
+ app.config([
+	'$stateProvider',
+	'$urlRouterProvider',
+	'$locationProvider',
+	function($stateProvider, $urlRouterProvider, $locationProvider){
+		$stateProvider.state('projects', {
+			url: '/projects',
+			templateUrl: 'projects.html',
+			controller: 'ProjectsCtrl'
+		});
+		$stateProvider.state('home', {
+			url: '/home',
+			templateUrl: 'home.html',
+			controller: 'HomeCtrl'
+		});
+
+		$urlRouterProvider.otherwise('home');
+		$locationProvider.html5Mode({
+			enabled:true,
+			requireBase: false
+		});
+	}]);
