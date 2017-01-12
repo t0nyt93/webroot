@@ -12,35 +12,12 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require bootstrap
 //= require angular
 //= require angular-ui-router
 //= require angular-rails-templates
+//= require router
+//= require_tree  .
 //= require_tree ../templates
-//= require_self
-//= require controllers/projects
-//= require controllers/home
+//= require_tree ./angular/controllers
 
-var app = angular.module( 'routerApp', ['ui.router', 'templates']);
-
- app.config([
-	'$stateProvider',
-	'$urlRouterProvider',
-	'$locationProvider',
-	function($stateProvider, $urlRouterProvider, $locationProvider){
-		$stateProvider.state('projects', {
-			url: '/projects',
-			templateUrl: 'projects.html',
-			controller: 'ProjectsCtrl'
-		});
-		$stateProvider.state('home', {
-			url: '/home',
-			templateUrl: 'home.html',
-			controller: 'HomeCtrl'
-		});
-
-		$urlRouterProvider.otherwise('home');
-		$locationProvider.html5Mode({
-			enabled:true,
-			requireBase: false
-		});
-	}]);

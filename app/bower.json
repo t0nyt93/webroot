@@ -15,7 +15,7 @@
     "tests"
   ],
   "dependencies": {
-    "angular-ui-router": "^0.3.2",
+    "angular-ui-router": "ui-router#^0.3.2",
     "angular": "^1.6.1",
     "bootstrap": "^3.3.7"
   }

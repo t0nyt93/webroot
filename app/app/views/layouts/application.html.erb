@@ -1,31 +1,54 @@
 <!DOCTYPE html>
 <html >
     <head>
-        <title>OCG</title>
-        <base href='/' />
+        <title>Oak Creek Graphics</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
         <%= csrf_meta_tags %>
-        <%= stylesheet_link_tag    'application', media: 'all'%>
+        <%= stylesheet_link_tag 'application', media: 'all'%>
         <%= javascript_include_tag 'application' %>
     </head>
 
-    <body ng-app="routerApp" ng-controller="HomeCtrl">
-        <!-- NAVIGATION -->
-        <nav class="navbar navbar-inverse" role="navigation">
-            <div class="navbar-header">
-                <a class="navbar-brand" ui-sref="#">AngularUI Router</a>
+    <body ng-app="routerApp">
+
+        <!--NAVBAR SECTION-->
+        <nav class='navbar navbar-default'>
+            <div class='container-fluid'>
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">Oak Creek Graphics</a>
+                </div>
+
+                <ul class="nav navbar-nav">
+                    <li class='active'><a href="/home">HOME</a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">PORTFOLIO
+                            <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/projects">Computer Graphics</a></li>
+                            <li><a href="/projects">GLSL Shaders</a></li>
+                            <li><a href="/projects">Artificial Intelligence</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/webgl">WEBGL</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/about">ABOUT</a></li>
+                    <li><a href="/contact">CONTACT</a></li>
+                </ul>
             </div>
-            <ul class="nav navbar-nav">
-                <li><a ui-sref="home">Home</a></li>
-                <li><a ui-sref="about">About</a></li>
-                <li><a ui-sref="header">{{header}}</a></li>
-            </ul>
         </nav>
+        <!--END NAVBAR SECTION-->
         <!-- MAIN CONTENT -->
         <div class="container">
 
-            <!-- THIS IS WHERE WE WILL INJECT OUR CONTENT ============================== -->
             <div ui-view></div>
 
         </div>
+        <!--FOOTER SECTION-->
+        <div id="footer">
+        <p> <%= controller.controller_name  %> </p>
+            2017 www.oakcreekgraphics.com | All Right Reserved  | Design by <a href="http://www.binarytheme.com/" target="_blank" >www.binarytheme.com</a>
+        </div>
+        <!--FOOTER SECTION-->
     </body>
 </html>

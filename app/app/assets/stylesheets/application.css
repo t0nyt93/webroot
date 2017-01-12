@@ -13,3 +13,6 @@
  *= require_tree .
  *= require_self
  */
+ *= require font-awesome
+ *= require bootstrap/dist/css/bootstrap
+ *= require_tree .
