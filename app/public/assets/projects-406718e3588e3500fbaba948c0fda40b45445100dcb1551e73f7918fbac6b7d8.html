@@ -1,0 +1,42 @@
+<section id="portfolio"  >
+    <div class="container" ng-init="projects = showcase()" >
+        <div class="row text-center" >
+            <div class="col-md-12">
+                <h1>PROJECTS </h1>
+            </div>
+        </div>
+    <div  >
+        <div class="row text-center pad-top" >
+            <div ng-repeat='p in projects' class="col-md-4 col-sm-4 col-xs-12">
+                <a ng-attr-href="#p.name"  data-toggle="modal">
+                    <img ng-attr-src={{p.imagePath}}" class="img-responsive " alt="" />
+                </a>
+            </div>
+
+        </div>
+    </div>
+    <div class="pad-top"></div>
+    <!--PORFOLIO POPUPS -->
+    <div ng-repeat="p in projects">
+        <div class="modal fade" ng-attr-id="{{p.name}}" tabindex="-1" role="dialog" aria-hidden="true" >
+            <div class="modal-content" >
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="modal-body" >
+                                <span class="fa fa-scissors fa-3x pull-right"  data-dismiss="modal">CLOSE</span>
+                                <br />
+                                <h1>{{p.name}}</h1>
+                                <br />
+                                <img ng-attr-src="{{p.imagePath}}" class="img-responsive " alt="" />
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+</section>
