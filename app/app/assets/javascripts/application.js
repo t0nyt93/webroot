@@ -11,13 +11,15 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery_ujs
-//= require bootstrap
 //= require angular
 //= require angular-ui-router
 //= require angular-rails-templates
+//= require tether/tether
+//= require bootstrap/bootstrap
+//= require mdb/mdb
+//
 //= require router
-//= require_tree  .
-//= require_tree ../templates
+//= require_tree ./modules
 //= require_tree ./angular/controllers
+//= require_tree ../templates
 

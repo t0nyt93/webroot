@@ -18,14 +18,16 @@ angular.module('routerApp', ['ui.router', 'templates']).
                 .state('home', {
                     url: '/home',
                     views: {
-                        '': {templateUrl : 'home/home.html' },
+                        '': {templateUrl : 'home/home_base.html' },
                         'nav@home':{ templateUrl : 'partials/navbar.html'},
                         'body@home':{
-                            templateUrl : 'home/home.html',
+                            templateUrl : 'home/home_content.html',
                             controller: 'HomeCtrl'
                         },
-                        'footer@home':{ templateUrl : 'partials/footer.html' },
-
+                        'about@home':{ templateUrl : 'about.html',
+                                       controller: 'HomeCtrl'
+                        },
+                        'contact@home':{ templateUrl : 'contact.html'}
                     }
                 })
                 .state('about', {
