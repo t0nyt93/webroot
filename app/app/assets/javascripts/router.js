@@ -7,7 +7,13 @@ angular.module('routerApp', ['ui.router', 'templates']).
             $stateProvider
                 .state('projects', {
                     url: '/projects',
-                    templateUrl: 'projects.html',
+                    views: {
+                        '': {},
+                        'nav': {},
+                        'content': {},
+
+                    }
+                    templateUrl: 'project_base.html',
                     controller: 'ProjectsCtrl'
                 })
                 .state('projects.detail', {
